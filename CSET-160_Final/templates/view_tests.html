@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Viewing all tests
+{% endblock %}
+
+{% block body %}
+    <h1>This is the tests info screen</h1>
+    {%for i in range(test_length)%}
+        <h1>{{tests[i][1]}}</h1>
+        <h2>Made by: {{tests[i][2]}}</h2>
+        <h3>Number of students that took this test:</h3>
+        <h3>{{number_of_students[i]}}</h3>
+        {%for v in student_grade%}
+            {%if tests[i][1] == v[0]%}
+                <h4>{{v[1]}}'s grade: {{v[2]}} | Graded by: {{v[3]}}</h4>
+            {%endif%}
+        {%endfor%}
+        <br><hr><br>
+    {%endfor%}
+{% endblock %}

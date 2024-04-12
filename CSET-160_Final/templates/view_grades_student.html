@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Viewing all tests
+{% endblock %}
+
+{% block body %}
+    <h1>This is the tests info screen</h1>
+    {%for i in tests%}
+        <h1>{{i[1]}}</h1>
+        <h2>Number of students taken</h2>
+        <br><hr><br>
+    {%endfor%}
+{% endblock %}

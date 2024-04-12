@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block body %}
+    <div style="min-height: 75vh; display:flex; align-items:center">
+        <div class="container-fluid py-5 text-center">
+            <form action="/register" method="post">
+                <div class="mb-3">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="passwordConfirm" name="confirmation" placeholder="Confirm Password" type="password">
+                </div>
+                <div class="mb-3">
+                    <input type="radio" name="radio" value="student"> Student
+                    <input type="radio" name="radio" value="teacher"> Teacher
+                </div>
+                <button class="btn btn-primary" type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

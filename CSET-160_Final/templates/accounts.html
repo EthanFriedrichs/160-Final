@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Accounts
+{% endblock %}
+
+{% block body %}
+    <h1>This is the accounts screen</h1>
+    <h2><a href="/accounts">Clear Filter</a> <a href="/accounts/teachers">View Teachers</a> <a href="/accounts/students">View Students</a></h2>
+    {%for i in accounts%}
+            <ul>
+                {%if flag == 0%}
+                <li>Email/Username: {{i[0]}}</li>
+                {%else%}
+                <li>ID: {{i[0]}}</li>
+                <ul>
+                    <li>Email/Username: {{i[1]}}</li>
+                </ul>
+                {%endif%}
+            </ul>
+    {%endfor%}
+{% endblock %}

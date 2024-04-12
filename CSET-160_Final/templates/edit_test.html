@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tests
+{% endblock %}
+
+{% block body %}
+    <h1>This is the test editing screen</h1>
+    <div style="min-height: 75vh; display:flex; align-items:center">
+        <div class="container-fluid py-5 text-center">
+                {%for curr_test in tests%}
+                    <h2>These questions are in {{curr_test[1]}}</h2>
+                    <form action="/tests/edit/testName" method="post">
+                        <div class="test_name_div">
+                            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="{{curr_test[0]}}" name="{{curr_test[0]}}" placeholder="New Test Name" type="text">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit Changes</button>
+                    </form>
+                    <br>
+                    {%for v in questions%}
+                        {%if curr_test[0] == v[2]%}
+                        <form action="/tests/edit" method="post">
+                            <p>Question ID: {{v[0]}}</p> <!-- v[0] is the question ID, v[1] is the question-->
+                            <p>{{v[1]}}</p>
+                            <div class="{{v[0]}}">
+                                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="{{v[0]}}" name="{{v[0]}}" placeholder="New Question" type="text">
+                            </div>
+                            <button class="btn btn-primary" type="submit">Submit Changes</button>
+                        </form>
+                        {%endif%}
+                    {%endfor%}
+                {%endfor%}
+        </div>
+    </div>
+{% endblock %}

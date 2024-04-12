@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tests
+{% endblock %}
+
+{% block body %}
+    <h1>This is the tests screen</h1>
+    {% if tests %}
+        {% for teacher in tests%}
+            <h1>{{teacher}}:</h1>
+            {% for test in tests[teacher] %}
+            <div style="display:flex; align-items:center">
+                <div class="container-fluid py-5 text-center">
+                    <form action="/tests/delete" method="post">
+                        <h1>Id: {{test[0]}} | Name: {{test[1]}}</h1>
+                        <input type ="hidden" name ='{{test[0]}}' value ='{{test[1]}}'></input>
+                        <button class="btn btn-primary" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        <br>
+        {% endfor %}
+    {%else%}
+        <br>
+        <h1>You have created no tests</h1>
+    {%endif%}
+
+    
+{% endblock %}

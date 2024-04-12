@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tests
+{% endblock %}
+
+{% block body %}
+    <h1>This is the test creation screen</h1>
+    <div style="min-height: 75vh; display:flex; align-items:center">
+        <div class="container-fluid py-5 text-center">
+            <h2>Make new test</h2>
+            <form action="/tests/create/newtest" method="post">
+                <div class="mb-2">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="testname" name="testname" placeholder="New Test Name" type="text">
+                </div>
+                <button class="btn btn-primary" type="submit">Add</button>
+            </form>
+        <div class="container-fluid py-5 text-center">
+            <h2>Add question to existing test</h2>
+            <form action="/tests/create" method="post">
+                <div class="mb-2">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="testname" name="testname" placeholder="Test Name" type="text">
+                </div>
+                <div class="mb-2">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="question" name="question" placeholder="Question" type="text">
+                </div>
+                <button class="btn btn-primary" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

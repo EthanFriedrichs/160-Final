@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Taken Tests
+{% endblock %}
+
+{% block body %}
+    {% if tests%}
+        {% for test in tests %}
+            <div style="display:flex; align-items:center">
+                <div class="container-fluid py-5 text-center">
+                    <form action="/grades" method="post">
+                        <h1>{{test[1]}}</h1>
+                        <h1>Taken by {{test[2]}}</h1>
+                        <input type="hidden" name='test_id' id='{{test[3]}}' value='{{test[3]}}'></input>
+                        <button class="btn btn-primary" type="submit">Grade</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div style="display:flex; align-items:center">
+            <div class="container-fluid py-5 text-center">
+                <h1>No one has taken your tests</h1>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

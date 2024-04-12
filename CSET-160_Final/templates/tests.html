@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tests
+{% endblock %}
+
+{% block body %}
+    <h1>This is the tests screen</h1>
+    {% for teacher in tests%}
+        <h1>{{teacher}}:</h1>
+        {% for test in tests[teacher] %}
+            <h1>Id: {{test[0]}} | Name: {{test[1]}}</h1>
+        {% endfor %}
+    <br>
+    {% endfor %}
+    
+{% endblock %}

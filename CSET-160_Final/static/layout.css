@@ -1,0 +1,62 @@
+.barItem{
+display: inline-block;
+}
+
+.logo {
+width: 45px;
+}
+
+header li {
+float: left;
+display: block;
+padding-left: 8px;
+padding-right: 8px;
+}
+
+.topBar{
+background-color: #faf9f7;
+display:flex;
+justify-content: space-between;
+align-items:center;
+padding: 10px;
+}
+
+.formSection {
+padding: 10px;
+right: 0;
+}
+
+.input, .barItem input{
+height: 35px;
+border: none;
+border-radius: 5px;
+margin-left: 10px;
+}
+
+.mainDiv {
+margin: auto;
+width: 30%;
+}
+
+h1{
+text-align: center;
+}
+
+h2{
+text-align: center;
+}
+
+h3{
+text-align: center;
+}
+
+h4{
+text-align: center;
+}
+
+header a{
+text-decoration:none;
+color:black;
+}
+
+/* log in */

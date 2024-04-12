@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Viewing grades
+{% endblock %}
+
+{% block body %}
+    <h1>This is the grades screen</h1>
+    {%for i in grades%}
+        <h1>Test: {{i[2]}}</h1>
+        <h2>Grade: {{i[1]}}</h2>
+    {%endfor%}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tests
+{% endblock %}
+
+{% block body %}
+    <h1>This is the testing screen</h1>
+    <div style="display:flex; align-items:center">
+        <div class="container-fluid py-5 text-center">
+            <form action="/tests/submit" method="post">
+                {% for question in questions%}
+                    <h1>{{question[1]}}</h1>
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="{{question[0]}}" name="{{question[0]}}" placeholder="Answer..." type="text">
+                    <br>
+                {% endfor %}
+                <input type="hidden" name='test_id' id='test_id' value='{{questions[0][2]}}'></input>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

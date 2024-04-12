@@ -1,0 +1,20 @@
+Monday:
+    Brennan: Set up the Login/Register features
+    Ethan: Set up main tables and base structures for adding and editing tests
+
+Tuesday:
+    Brennan: Set up the login_required function and apology function. Started the delete tests feature
+    Ethan: Added questions, tests, and students table, finished up create test function
+
+Wednesday:
+    Brennan: Finished the delete tests feature. Added the take tests screen.
+    Ethan: Worked on edit_test and got most of the framework done
+
+Thursday:
+    Brennan: Added the taking tests feature. Added username next to logout button. Fixed jinja bug on layout.html. Started work on teacher grading function
+    Ethan: Finished up edit_test main part and started reworking it to allow editing of the test's name
+
+Friday:
+    Brennan: Finished teaacher grading function. Set up showing grades page. Made it so students can only take each test once. Fixed many sql bugs
+    Ethan1: Added final statements to make new test page and completed database tables for grade. Made students able to view their grades via the view_grades page.
+    Ethan2: Made the test information page in it's entirety.
